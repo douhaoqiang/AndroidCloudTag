@@ -253,7 +253,7 @@ public class TagCloudView<T> extends ViewGroup {
     }
 
 
-    public void setOnTagCListener(TagCloudView.TagListener onTagListener) {
+    public void setOnTagListener(TagCloudView.TagListener onTagListener) {
         this.mTagListener = onTagListener;
     }
 
