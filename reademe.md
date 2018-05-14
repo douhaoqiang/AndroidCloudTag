@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-** 属性说明
+## 属性说明
 
 ```xml
 <resources>
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     | 名称 | 作用 |
     | :------: | :------: |
-    |   设计尺寸     |    为UI给的效果图尺寸    |
-    |   真实尺寸     |    为手机宽度尺寸（dp）    |
-    |   输出路径     |    适配文件的输出位置    |
+    |   tagVerticalMargen     |    垂直间距    |
+    |   tagHorizontalMargen     |    水平间距    |
+    |   isCanCheck     |    是否可点击    |
+    |   isSingleCheck     |    是否单选 true 单选 false 多选  默认单选    |
