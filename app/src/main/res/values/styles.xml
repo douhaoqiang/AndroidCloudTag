@@ -9,17 +9,4 @@
     </style>
 
 
-    <declare-styleable name="TagCloudView">
-
-        <!-- 垂直间距 -->
-        <attr name="tagVerticalMargen" format="dimension" />
-        <!-- 水平间距 -->
-        <attr name="tagHorizontalMargen" format="dimension" />
-        <!-- 是否可点击 -->
-        <attr name="isCanCheck" format="boolean" />
-        <!-- 是否单选 true 单选 false 多选  默认单选 -->
-        <attr name="isSingleCheck" format="boolean" />
-
-    </declare-styleable>
-
 </resources>
