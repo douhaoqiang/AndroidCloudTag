@@ -90,8 +90,7 @@ install {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 bintray {
-    user = properties.getProperty("bintray.username")
-    //读取 local.properties 文件里面的 bintray.user 登录用户名。
+    user = properties.getProperty("bintray.username") //读取 local.properties 文件里面的 bintray.user 登录用户名。
     key = properties.getProperty("bintray.apikey") //读取 local.properties 文件里面的 bintray.apikey
     configurations = ['archives']
     pkg {
@@ -105,26 +104,28 @@ bintray {
     }
 }
 
-//// 生成jar包的task，不需要修改。
-//task sourcesJar(type: Jar) {
-//    from android.sourceSets.main.java.srcDirs
-//    classifier = 'sources'
-//}
-//
-//// 生成jarDoc的task，不需要修改。
-//task javadoc(type: Javadoc) {
-//    source = android.sourceSets.main.java.srcDirs classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//    // destinationDir = file("../javadoc/")
-//    failOnError false // 忽略注释语法错误，如果用jdk1.8你的注释写的不规范就编译不过。
-//}
-//
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-//artifacts {
-//    archives javadocJar
-//    archives sourcesJar
-//}
+//打包源码
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+//打包源码doc文档
+task javadoc(type: Javadoc) {
+    failOnError false
+    options.encoding = "UTF-8"
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(configurations.compile.files,android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
 
 

@@ -121,8 +121,8 @@ public class TagCloudView<T> extends ViewGroup {
     /**
      * 计算 ChildView 宽高
      *
-     * @param widthMeasureSpec
-     * @param heightMeasureSpec
+     * @param widthMeasureSpec  宽
+     * @param heightMeasureSpec 高
      */
     @SuppressLint("DrawAllocation")
     @Override
@@ -261,7 +261,7 @@ public class TagCloudView<T> extends ViewGroup {
     /**
      * 获取选择项
      *
-     * @return
+     * @return 获取选择列表
      */
     public List<T> getCheckedTags() {
         List<T> tags = new ArrayList<>();
@@ -276,15 +276,16 @@ public class TagCloudView<T> extends ViewGroup {
         /**
          * 获取item资源id
          *
-         * @return
+         * @return  获取item布局
          */
         int getlayResId();
 
         /**
          * 绘制界面
          *
-         * @param data
-         * @param tagView
+         * @param data      单个数据
+         * @param tagView   单个布局view
+         * @param isChecked 是否被选中
          */
         void convertView(T data, View tagView, boolean isChecked);
 
