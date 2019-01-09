@@ -95,7 +95,7 @@ bintray {
     configurations = ['archives']
     pkg {
         //这里的repo值必须要和你创建Maven仓库的时候的名字一样
-        repo = "custom" //发布到JCenter上的项目名字
+        repo = "Maven" //发布到JCenter上的项目名字
         name = libName
         websiteUrl = siteUrl
         vcsUrl = gitUrl
